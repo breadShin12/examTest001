@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="weather"
+            type="com.sjh.sample.domain.entity.WeatherItemEntity" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        style="@style/TableRowContent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/weatherIv"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:imgWeatherIcon="@{weather.weather_state_abbr}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/weatherStateTv"
+            android:layout_marginStart="@dimen/weather_state_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{weather.weather_state_name}"
+            app:layout_constraintBottom_toTopOf="@+id/weatherTempTv"
+            app:layout_constraintStart_toEndOf="@+id/weatherIv"
+            app:layout_constraintTop_toTopOf="@+id/weatherIv" />
+
+        <TextView
+            android:textColor="@color/red"
+            android:id="@+id/weatherTempTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weatherTemp="@{weather.the_temp}"
+            app:layout_constraintBottom_toBottomOf="@+id/weatherIv"
+            app:layout_constraintStart_toStartOf="@+id/weatherStateTv"
+            app:layout_constraintTop_toBottomOf="@+id/weatherStateTv" />
+
+        <TextView
+            android:layout_marginStart="@dimen/table_content_padding"
+            android:id="@+id/weatherHumidityTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weatherHumidity="@{weather.humidity}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/weatherTempTv"
+            app:layout_constraintStart_toEndOf="@+id/weatherTempTv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

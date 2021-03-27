@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TableRow">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingTop">@dimen/default_margin</item>
+        <item name="android:paddingBottom">@dimen/default_margin</item>
+        <item name="android:layout_marginStart">@dimen/table_padding</item>
+        <item name="android:layout_marginBottom">@dimen/table_padding</item>
+    </style>
+
+    <style name="TableRowTitle" parent="TableRow">
+        <item name="android:paddingStart">@dimen/table_title_padding</item>
+        <item name="android:paddingEnd">@dimen/table_title_padding</item>
+    </style>
+
+    <style name="TableRowContent" parent="TableRow">
+        <item name="android:paddingStart">@dimen/table_title_padding</item>
+        <item name="android:layout_marginEnd">@dimen/table_title_padding</item>
+        <!--<item name="android:paddingEnd">@dimen/table_content_padding</item>-->
+    </style>
+
+    <style name="TableHeader" parent="@android:style/TextAppearance.Small">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@color/gray</item>
+        <item name="android:height">@dimen/table_header_height</item>
+        <item name="android:layout_marginStart">@dimen/table_padding</item>
+        <item name="android:paddingTop">@dimen/table_padding</item>
+    </style>
+</resources>

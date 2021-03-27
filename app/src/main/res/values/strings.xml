@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sample</string>
+    <string name="weather_temp_format">%d°C</string>
+    <string name="weather_humidity">%d%%</string>
+</resources>
