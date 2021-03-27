@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="location"
+            type="com.sjh.sample.domain.entity.WeatherLocationEntity" />
+    </data>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="2,3">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="@dimen/table_header_first_width"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    style="@style/TableRowTitle"
+                    android:gravity="center"
+                    android:text="@{location.title}"
+                    android:textSize="16sp" />
+
+                <include
+                    style="@style/TableRow"
+                    android:id="@+id/todayWeather"
+                    layout="@layout/item_weather"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/weather_row_height"
+                    android:layout_column="2"
+                    android:layout_weight="2" />
+
+                <include
+                    style="@style/TableRow"
+                    android:id="@+id/tomorrowWeather"
+                    layout="@layout/item_weather"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/weather_row_height"
+                    android:layout_column="3"
+                    android:layout_weight="2" />
+            </TableRow>
+        </TableLayout>
+
+</layout>
