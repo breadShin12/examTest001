@@ -11,8 +11,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding;
     private val weatherViewModel: WeatherViewModel by viewModels()
+    private lateinit var binding : ActivityMainBinding
     private lateinit var listAdapter : WeatherListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

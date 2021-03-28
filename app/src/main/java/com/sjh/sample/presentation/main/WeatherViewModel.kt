@@ -19,9 +19,9 @@ class WeatherViewModel @Inject constructor(private val weatherUseCase: WeatherUs
     fun requestWeatherList(query: String) {
         showProgress()
         weatherUseCase.execute(query) {
-            when (this.status) {
+            when (it.status) {
                 Result.Status.SUCCESS -> {
-                    _weatherInfo.value = data
+                    _weatherInfo.value = it.data
                     hideProgress()
                 }
 
